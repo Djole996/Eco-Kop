@@ -1,0 +1,297 @@
+html {
+	scroll-behavior: smooth;
+}
+body{
+	margin: 0px;
+	padding:0px;
+	font-family: Garamond (serif);
+}
+
+.header{
+	border-bottom:1px solid #0000FF;
+	background-color: #fefefe;
+}
+.column{
+	/*border: 1px solid black; */
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.page .column{
+		height: 100vh;
+}
+
+#logo-i-social{
+	display: flex;
+}
+
+#logo-holder{
+	flex-grow: 1;
+}
+#social-holder{
+	flex-grow: 1;
+	text-align: right;
+}
+
+#social-holder a{
+	text-decoration: none;
+}
+
+#social-holder a img{
+	margin: 5px;
+	width: 24px;
+	height: 24px;
+}
+#main-menu{
+	display: flex;
+	
+}
+#main-menu a{
+    font-size: 16pt;
+	flex-grow: 1;
+	text-align: center;
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	color: #0000FF;
+	transition: 400ms;
+}
+
+h1{
+    color: #0096FF;
+    font-size: 50pt;
+    font-weight: bold;
+}
+
+#main-menu a:hover,
+ #main-menu a.active
+ {
+	color: #ffffff;
+	background: #0096FF;
+}
+
+#pocetna {
+	text-align: center;
+	color: #ffffff;
+	background: url('slicice/Pozadina.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.dark-box {
+	border: 1px solid #ffffff;
+	background-color: #33333370;
+	font-size: 24pt;
+	padding: 40px;
+	opacity: 1;
+	color:#FFFFFF;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right; 
+}
+
+#slike-apartmana h2{
+	padding-top:50px; 
+	padding-bottom:40px;
+	font-size: 40pt;
+	color:#d4af37;
+	font-weight: bold;
+}
+
+#slike-apartmana > .column > h2{
+	background-color: #ffffffa0;
+}
+
+.grid3x3{
+	width:100vh;
+	height:100vh;
+	clear:both;
+   }
+   .grid3x3>div{
+	width:30vh;
+	height:30vh;
+	float:left;
+	line-height:100px;
+	text-align:center;    
+   }
+   .grid3x3>div>img{
+	display:inline-block;
+	vertical-align:middle;
+	max-width:90%;
+	max-height:90%;
+   }
+
+   #slike-apartmana{
+	background: url('slicice/logo.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 46% 54%;	
+}
+
+#lokacija h2{
+	color:#000000;
+	margin-top:80px;
+	margin-bottom: 40px;
+	text-align:center;
+	font-weight: bold;
+}
+
+#lokacija > .column > h2{
+	background-color: #d4af3770;
+	border:#d4af37;;
+}
+
+.lokacija-region{
+	display: grid;
+	grid-template: "sirina mapa"
+	               "duzina mapa";
+	grid-template-columns: 300px 1fr;
+}
+
+.geografska-sirina{
+	grid-area: sirina;
+	position: "bottom";
+	padding-bottom:25px;
+	font-size:18px;
+	text-align: center;
+
+	/*margin-top:80px;
+	margin-bottom:40px;
+	color: #0096FF;*/
+}
+
+.geografska-duzina{
+	grid-area: duzina;
+	font-size:18px;
+	text-align: center;
+	
+	/*color: #0096FF;
+	margin-top:80px;
+	margin-bottom:40px; */
+}
+
+.lokacija-mapa{
+	grid-area: mapa;
+}
+
+/*
+.page #lokacija{
+	background-color:#A4B85D;
+	background-size: cover;
+	background-attachment: fixed
+} */
+
+#kontakt h2{
+	color: #000000;
+	margin-top:80px;
+	margin-bottom: 40px;
+	text-align:center;
+	font-weight: bold;
+}
+
+.kontakt-podaci{
+	font-weight: bold;
+	font-size:24px;
+}
+
+.page #kontakt {
+	background: url('slicice/logo2.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 50%;	
+}
+.page .column #kontakt{
+	height: 90vh;
+}
+
+.kontakt-podaci > #e-mail{
+	text-align: left;
+	float: left;
+}
+
+.kontakt-podaci > #br-tel{
+	text-align: right;
+	float:right;
+}
+
+
+.footer{
+	border-top: 3px solid #0000FF;
+	background-color: #fefefe;
+	font-size:13px;
+}
+
+.footer > .column {
+	display: flex;
+	height: 10vh;
+}
+
+.footer .footer-column {
+	flex-grow: 1;
+	flex-basis: 0;
+	padding-top:25px;
+	padding-bottom:5px;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right; 
+}
+
+.footer-column a {
+	text-decoration: none;
+	color: #0000FF;
+}
+
+
+
+.footer-column a:hover {
+	text-decoration: underline;
+}
+
+
+.btn-styled {
+    font-size: 14px;
+    margin: 8px;
+    padding: 0 10px;
+    line-height: 2;
+}
+
+ form .inputBox input{
+	width:30%;
+	border: 1rem solid rgba(0,0,0,0);
+	padding: 1rem;
+	color:#333;
+	text-transform: none;
+}
+
+form .inputBox h3{
+	font-size: 2rem;
+	padding: 1rem 0;
+	color:#666;
+}
+
+.column #trazi{
+	width:20%;
+	padding: 1rem;
+	background-color:#d4af37 ;
+	font-size:1.5 rem;
+	color:#FFFFFF;
+	font-size: 25px;
+}
