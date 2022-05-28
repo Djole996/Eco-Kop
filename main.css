@@ -1,186 +1,185 @@
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-body{
-	margin: 0px;
-	padding:0px;
-	font-family: Garamond (serif);
-}
-
-.header{
-	border-bottom:1px solid #0000FF;
-	background-color: #fefefe;
-}
-.column{
-	/*border: 1px solid black; */
-	width: 1000px;
-	margin: 0px auto;
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Garamond (serif);
 }
 
-.page .column{
-		height: 100vh;
+.header {
+  border-bottom: 1px solid #0000ff;
+  background-color: #fefefe;
+}
+.column {
+  /*border: 1px solid black; */
+  width: 1000px;
+  margin: 0px auto;
 }
 
-#logo-i-social{
-	display: flex;
+.page .column {
+  height: 100vh;
 }
 
-#logo-holder{
-	flex-grow: 1;
-}
-#social-holder{
-	flex-grow: 1;
-	text-align: right;
+#logo-i-social {
+  display: flex;
 }
 
-#social-holder a{
-	text-decoration: none;
+#logo-holder {
+  flex-grow: 1;
+}
+#social-holder {
+  flex-grow: 1;
+  text-align: right;
 }
 
-#social-holder a img{
-	margin: 5px;
-	width: 24px;
-	height: 24px;
-}
-#main-menu{
-	display: flex;
-	
-}
-#main-menu a{
-    font-size: 16pt;
-	flex-grow: 1;
-	text-align: center;
-	display: block;
-	padding: 10px 0;
-	text-decoration: none;
-	color: #0000FF;
-	transition: 400ms;
+#social-holder a {
+  text-decoration: none;
 }
 
-h1{
-    color: #0096FF;
-    font-size: 50pt;
-    font-weight: bold;
+#social-holder a img {
+  margin: 5px;
+  width: 24px;
+  height: 24px;
+}
+#main-menu {
+  display: flex;
+}
+#main-menu a {
+  font-size: 16pt;
+  flex-grow: 1;
+  text-align: center;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #0000ff;
+  transition: 400ms;
+}
+
+h1 {
+  color: #0096ff;
+  font-size: 50pt;
+  font-weight: bold;
 }
 
 #main-menu a:hover,
- #main-menu a.active
- {
-	color: #ffffff;
-	background: #0096FF;
+#main-menu a.active {
+  color: #ffffff;
+  background: #0096ff;
 }
 
 #pocetna {
-	text-align: center;
-	color: #ffffff;
-	background: url('slicice/Pozadina.jpg');
-	background-size: cover;
-	background-attachment: fixed;
+  text-align: center;
+  color: #ffffff;
+  background: url("slicice/Pozadina.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .dark-box {
-	border: 1px solid #ffffff;
-	background-color: #33333370;
-	font-size: 24pt;
-	padding: 40px;
-	opacity: 1;
-	color:#FFFFFF;
+  border: 1px solid #ffffff;
+  background-color: #33333370;
+  font-size: 24pt;
+  padding: 40px;
+  opacity: 1;
+  color: #ffffff;
 }
 
 .align-center {
-	text-align: center;
+  text-align: center;
 }
 
 .align-left {
-	text-align: left;
+  text-align: left;
 }
 
 .align-right {
-	text-align: right; 
+  text-align: right;
 }
 
-#slike-apartmana h2{
-	padding-top:50px; 
-	padding-bottom:40px;
-	font-size: 40pt;
-	color:#d4af37;
-	font-weight: bold;
+#slike-apartmana h2 {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  font-size: 40pt;
+  color: #d4af37;
+  font-weight: bold;
 }
 
-#slike-apartmana > .column > h2{
-	background-color: #ffffffa0;
+#slike-apartmana > .column > h2 {
+  background-color: #ffffffa0;
 }
 
-.grid3x3{
-	width:100vh;
-	height:100vh;
-	clear:both;
-   }
-   .grid3x3>div{
-	width:30vh;
-	height:30vh;
-	float:left;
-	line-height:100px;
-	text-align:center;    
-   }
-   .grid3x3>div>img{
-	display:inline-block;
-	vertical-align:middle;
-	max-width:90%;
-	max-height:90%;
-   }
-
-   #slike-apartmana{
-	background: url('slicice/logo.png');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: 46% 54%;	
+.grid3x3 {
+  width: 100vh;
+  height: 100vh;
+  clear: both;
+}
+.grid3x3 > div {
+  width: 30vh;
+  height: 30vh;
+  float: left;
+  line-height: 100px;
+  text-align: center;
+}
+.grid3x3 > div > img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 90%;
+  max-height: 90%;
 }
 
-#lokacija h2{
-	color:#000000;
-	margin-top:80px;
-	margin-bottom: 40px;
-	text-align:center;
-	font-weight: bold;
+#slike-apartmana {
+  background: url("slicice/logo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 46% 54%;
 }
 
-#lokacija > .column > h2{
-	background-color: #d4af3770;
-	border:#d4af37;;
+#lokacija h2 {
+  color: #000000;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
 }
 
-.lokacija-region{
-	display: grid;
-	grid-template: "sirina mapa"
-	               "duzina mapa";
-	grid-template-columns: 300px 1fr;
+#lokacija > .column > h2 {
+  background-color: #d4af3770;
+  border: #d4af37;
 }
 
-.geografska-sirina{
-	grid-area: sirina;
-	position: "bottom";
-	padding-bottom:25px;
-	font-size:18px;
-	text-align: center;
+.lokacija-region {
+  display: grid;
+  grid-template:
+    "sirina mapa"
+    "duzina mapa";
+  grid-template-columns: 300px 1fr;
+}
 
-	/*margin-top:80px;
+.geografska-sirina {
+  grid-area: sirina;
+  position: "bottom";
+  padding-bottom: 25px;
+  font-size: 18px;
+  text-align: center;
+
+  /*margin-top:80px;
 	margin-bottom:40px;
 	color: #0096FF;*/
 }
 
-.geografska-duzina{
-	grid-area: duzina;
-	font-size:18px;
-	text-align: center;
-	
-	/*color: #0096FF;
+.geografska-duzina {
+  grid-area: duzina;
+  font-size: 18px;
+  text-align: center;
+
+  /*color: #0096FF;
 	margin-top:80px;
 	margin-bottom:40px; */
 }
 
-.lokacija-mapa{
-	grid-area: mapa;
+.lokacija-mapa {
+  grid-area: mapa;
 }
 
 /*
@@ -190,108 +189,139 @@ h1{
 	background-attachment: fixed
 } */
 
-#kontakt h2{
-	color: #000000;
-	margin-top:80px;
-	margin-bottom: 40px;
-	text-align:center;
-	font-weight: bold;
+/* online rezervacije css sekcija */
+
+#online-rezervacije {
+  display: flex;
+  flex-direction: row;
+  background-color: #0096ff;
+
+  padding: 30px;
 }
 
-.kontakt-podaci{
-	font-weight: bold;
-	font-size:24px;
+.user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0%;
+  margin: 0%;
+}
+
+@media (max-width: 786px) {
+  #online-rezervacije {
+    display: flex;
+    flex-direction: row;
+    background-color: #666;
+  }
+}
+
+/* kraj online rezervacije css sekcija */
+
+#kontakt h2 {
+  color: #000000;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.kontakt-podaci {
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .page #kontakt {
-	background: url('slicice/logo2.png');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: 50% 50%;	
+  background: url("slicice/logo2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
-.page .column #kontakt{
-	height: 90vh;
-}
-
-.kontakt-podaci > #e-mail{
-	text-align: left;
-	float: left;
+.page .column #kontakt {
+  height: 90vh;
 }
 
-.kontakt-podaci > #br-tel{
-	text-align: right;
-	float:right;
+.kontakt-podaci > #e-mail {
+  text-align: left;
+  float: left;
 }
 
+.kontakt-podaci > #br-tel {
+  text-align: right;
+  float: right;
+}
 
-.footer{
-	border-top: 3px solid #0000FF;
-	background-color: #fefefe;
-	font-size:13px;
+.footer {
+  border-top: 3px solid #0000ff;
+  background-color: #fefefe;
+  font-size: 13px;
 }
 
 .footer > .column {
-	display: flex;
-	height: 10vh;
+  display: flex;
+  height: 10vh;
 }
 
 .footer .footer-column {
-	flex-grow: 1;
-	flex-basis: 0;
-	padding-top:25px;
-	padding-bottom:5px;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding-top: 25px;
+  padding-bottom: 5px;
 }
 
 .align-center {
-	text-align: center;
+  text-align: center;
 }
 
 .align-left {
-	text-align: left;
+  text-align: left;
 }
 
 .align-right {
-	text-align: right; 
+  text-align: right;
 }
 
 .footer-column a {
-	text-decoration: none;
-	color: #0000FF;
+  text-decoration: none;
+  color: #0000ff;
 }
-
-
 
 .footer-column a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 .btn-styled {
-    font-size: 14px;
-    margin: 8px;
-    padding: 0 10px;
-    line-height: 2;
+  font-size: 14px;
+  margin: 8px;
+  padding: 0 10px;
+  line-height: 2;
 }
 
- form .inputBox input{
-	width:30%;
-	border: 1rem solid rgba(0,0,0,0);
-	padding: 1rem;
-	color:#333;
-	text-transform: none;
+.inputBox {
+  display: inline-block;
+}
+.inputBox input {
+  display: inline-block;
 }
 
-form .inputBox h3{
-	font-size: 2rem;
-	padding: 1rem 0;
-	color:#666;
+form .inputBox input {
+  width: 30%;
+  border: 1rem solid rgba(0, 0, 0, 0);
+  padding: 1rem;
+  color: #333;
+  text-transform: none;
 }
 
-.column #trazi{
-	width:20%;
-	padding: 1rem;
-	background-color:#d4af37 ;
-	font-size:1.5 rem;
-	color:#FFFFFF;
-	font-size: 25px;
+form .inputBox h3 {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: #666;
+}
+
+.column #trazi {
+  width: 20%;
+  padding: 1rem;
+  background-color: #d4af37;
+  font-size: 1.5 rem;
+  color: #ffffff;
+  font-size: 25px;
 }
