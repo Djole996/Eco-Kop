@@ -1,6 +1,16 @@
-                  
-                  
-                 /* document.addEventListener('DOMContentLoaded', function() {
+const btn = document.querySelector(".btn");
+const form = document.querySelector(".user-form");
+
+const datumPrijave = document.querySelector(".prijava");
+const datumOdjave = document.querySelector(".odjava");
+const brojOsoba = document.querySelector(".broj-osoba");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log(brojOsoba.value, datumPrijave.value, datumOdjave.value);
+});
+
+/* document.addEventListener('DOMContentLoaded', function() {
                      var button = document.createElement('button');
                       button.type = 'button';
                          button.innerHTML = 'Datum prijavljivanja:';
@@ -58,5 +68,3 @@
                         var container = document.getElementById('container4');
                         container.appendChild(button);
                         }, false) */
-
-                       

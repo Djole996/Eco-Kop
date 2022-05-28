@@ -121,11 +121,21 @@ h1 {
   line-height: 100px;
   text-align: center;
 }
-.grid3x3 > div > img {
+.grid3x3 div img {
   display: inline-block;
-  vertical-align: middle;
-  max-width: 90%;
-  max-height: 90%;
+
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 786px) {
+  .grid3x3 div img {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 400px;
+    height: 400px;
+  }
 }
 
 #slike-apartmana {
@@ -287,6 +297,15 @@ h1 {
 
 .footer-column a:hover {
   text-decoration: underline;
+}
+
+.btn {
+  background-color: #fefefe;
+  padding: 10%;
+  border: #666;
+  border-radius: 7px;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .btn-styled {
