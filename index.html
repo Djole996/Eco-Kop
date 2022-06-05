@@ -1,248 +1,216 @@
-<!doctype html>
-<html>
-    <head>
-		<title>Apartman Eco Kop</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="lightbox.css">
-        <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
-	</head>
-    <body>
-        <div class="header">
-            <div class="column">
-                <div id="logo-i-social">
-                    <div id="logo-holder">
-                        <img alt="Loading logo.." 
-                            src="slicice\logo.png" 
-                            width="180" height="180" />
-            </div>
-            <h1>
-               Apartman Eco Kop
-            </h1>
-                <div id="social-holder">
-                    
-                    <a target="_blank" href="https://www.facebook.com/Eco-Kop-apartman-Kopaonik-108427467267603">
-                        <img alt="Facebook"
-                            src="slicice\facebook-logo-2019.svg">
-                    </a>
-                    
-                    <a href="#" >
-                        <img src="slicice/Instagram_logo.png" alt="Instagram">
-        
-                    </a>
-                        
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <!-- styles css -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="shortcut icon"
+      href="/images/title-icon.webp"
+      type="image/x-icon"
+    />
+    <title>Home | Furny</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <!-- links -->
+        <div>
+          <button class="toggle-nav">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html" class="nav-link"> home </a>
+            </li>
+            <li>
+              <a href="products.html" class="nav-link"> products </a>
+            </li>
+            <li>
+              <a href="about.html" class="nav-link"> about </a>
+            </li>
+          </ul>
+        </div>
+        <!-- logo -->
+        <!--  <img src="./images/logo-white.svg" class="nav-logo" alt="logo" /> -->
+        <!-- cart icon -->
+        <div class="toggle-container">
+          <button class="toggle-cart">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <span class="cart-item-count">1</span>
+        </div>
+      </div>
+    </nav>
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-container">
+        <h1 class="text-slanted">Home is not a place</h1>
+        <h2 class="text-slanted">Its a feeling...</h2>
+        <a href="products.html" class="hero-btn"> show now </a>
+      </div>
+    </section>
+    <!-- sidebar -->
+    <div class="sidebar-overlay">
+      <aside class="sidebar">
+        <!-- close -->
+        <button class="sidebar-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- links -->
+        <ul class="sidebar-links">
+          <li>
+            <a href="index.html" class="sidebar-link">
+              <i class="fas fa-home fa-fw"></i>
+              home
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="sidebar-link">
+              <i class="fas fa-couch fa-fw"></i>
+              products
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="sidebar-link">
+              <i class="fas fa-book fa-fw"></i>
+              about
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+    <!-- cart -->
+    <div class="cart-overlay">
+      <aside class="cart">
+        <button class="cart-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <header>
+          <h3 class="text-slanted">your bag</h3>
+        </header>
+        <!-- cart items -->
+        <div class="cart-items">
+          <!-- single item -->
+          <!--  <article class="cart-item" data-id="">
+            <img
+              src="./images/main-bcg.jpeg"
+              alt="name"
+              class="cart-item-img"
+            />
+            
+            <div>
+              <h4 class="cart-item-name">high benhch</h4>
+              <p class="cart-item-price">$13.99</p>
+              <button class="cart-item-remove-btn">remove</button>
             </div>
            
-            <nav id="main-menu">
-                <a href="#pocetna" class="active">Pocetna</a>
-                <a href="#slike-apartmana">Slike apartmana</a>
-                <a href="#lokacija">Lokacija</a>
-                <a href="#online-rezervacije">Online rezervacije</a>
-                <a href="#kontakt">Kontakt</a>
-            </nav>
+            <div>
+              <button class="cart-item-increase-btn">
+                <i class="fas fa-chevron-up"></i>
+              </button>
+              <p class="cart-item-amount">1</p>
+              <button class="cart-item-decrease-btn">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </article> -->
         </div>
-        </div>
-        <div class="page" id="pocetna">
-			<div class="column">
-					
-					<div class="dark-box">
-						<p>Apartman Eco Kop se nalazi u odmaralistu „Suvo Rudiste" na Kopaoniku,
-                            najboljem skijaskom centru u Srbiji. Apartman se nalazi a samo 300m od
-                            centra Kopaonika sa pozicijom apartmana idealnom za skijase i bordere u
-                            toku zimske sezone zbog mogucnosti direktnog izlaska i dolaska sa ski staze
-                            bez obaveze nosenja skija ili borda.</p>
-                            <p> Apartman sadrzi 3 kreveta od cega su 2
-                            singl a jedan krevet na razvlacanje koji bude dimenzija francuskog lezaja kada
-                            se razvuce tako da je apartman pogodan za do 4 osobe. Pored kompletno
-                            opremijene kuhinje, ciste posteljine i peskira, gostima je na raspolaganju Wi-Fi
-                            kao i mogucnost parkinga u neposrednoj blizini objekta.
-                            </p>
-						
-			</div>
-		</div>
-		</div>
 
-        <div class="page" id="slike-apartmana">
-			<div class="column">
-			<h2 class="align-center">
-				Slike Apartmana
-			</h2>
+        <!-- footer -->
+        <footer>
+          <h3 class="cart-total text-slanted">total : $12.99</h3>
+          <button class="cart-checkout btn">checkout</button>
+        </footer>
+      </aside>
+    </div>
+    <!-- featured products -->
+    <section class="section featured">
+      <div class="title">
+        <h2><span>/</span> featured</h2>
+      </div>
+      <div class="featured-center section-center">
+        <h2 class="section-loading">loading...</h2>
+        <!-- single product -->
+        <article class="product">
+          <div class="product-container">
+            <img src="./images/main-bcg.jpeg" class="product-img img" alt="" />
 
-            <div class="grid3x3">
-                <div> <a href="slicice\slike-apartmana\S3.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S3.JPG" width="225" height="275"></a> </div>
-                <div> <a href="slicice\slike-apartmana\S4.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S4.JPG" width="225" height="275"></a></div>
-                <div> <a href="slicice\slike-apartmana\S5.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S5.JPG" width="225" height="275"></a></div>
-                <div> <a href="slicice\slike-apartmana\S6.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S6.JPG" width="225" height="275"></a></div>
-                <div> <a href="slicice\slike-apartmana\S9.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S9.JPG" width="225" height="275"></a></div>
-                <div> <a href="slicice\slike-apartmana\S8.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S8.JPG" width="225" height="275"></a></div>
-                <div> <a href="slicice\slike-apartmana\S1.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S1.JPG" width="275" height="225"></a></div>
-                <div> <a href="slicice\slike-apartmana\S2.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S2.JPG" width="275" height="225"></a></div>
-                <div> <a href="slicice\slike-apartmana\S7.JPG" data-lightbox="gallery"><img src="slicice\slike-apartmana\S7.JPG" width="275" height="225"></a></div>
-               </div>
-
-
-            
-		<div class="page" id="lokacija">
-			<div class="column">
-			<h2 class="align-center">Lokacija</h2>
-            
-            
-            <div class="lokacija-region">
-				<div class="geografska-sirina">
-					<strong>Kopaonik bb, Kopaonik 36354</strong>
-                </div>
-                <div class="geografska-duzina">
-                    <strong>43° 17' 1.54"N</strong><br>
-                    <strong> 20° 48' 18.26"E</strong>
-                </div>
-            
-                <iframe width="700" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=20.79994082450867%2C43.28005630001139%2C20.80998301506043%2C43.285718805110875&amp;layer=mapnik&amp;marker=43.28289152361763%2C20.804961919784546" style="border: 1px solid black"></iframe><small><a target="_blank" href="https://www.openstreetmap.org/?mlat=43.28289&amp;mlon=20.80496#map=17/43.28289/20.80496&amp;layers=N">View Larger Map</a></small>
+            <div class="product-icons">
+              <a href="product.html?id=1" class="product-icon">
+                <i class="fas fa-search"></i>
+              </a>
+              <button class="product-cart-btn product-icon" data-id="1">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
             </div>
-            </div>
+          </div>
+          <footer>
+            <p class="product-name">name</p>
+            <h4 class="product-price">$9.99</h4>
+          </footer>
+        </article>
+        <!--  end of single product -->
+      </div>
+      <a href="products.html" class="btn"> all products </a>
+    </section>
+    <!-- footer and contact section -->
+    <section class="section-footer">
+      <!-- logo part -->
+      <div class="company-logo divs">
+        <a href="index.html" class="footer-logo">
+          <img src="/images/logo-img.jpg" alt="logo" class="footer-logo" />
+        </a>
+      </div>
 
-            </div>
+      <!-- company info -->
+      <div class="company-info divs">
+        <h4>Support</h4>
+        <ul class="list-container">
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">FAQ</a></li>
+          <li><a href="">Locate a Dealer</a></li>
+          <li><a href="">Product Registration</a></li>
+          <li><a href="">Spare Parts</a></li>
+        </ul>
+      </div>
 
+      <!-- Furny -->
+      <div class="company-furny divs">
+        <h4>Furny</h4>
+        <ul class="list-container">
+          <li><a href="">About Us</a></li>
+          <li><a href="">Furny Design</a></li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">News Room</a></li>
+          <li><a href="">Acces</a></li>
+        </ul>
+      </div>
 
-            <script type="module">
-                // Import the functions you need from the SDKs you need
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
-                // TODO: Add SDKs for Firebase products that you want to use
-                // https://firebase.google.com/docs/web/setup#available-libraries
-              
-                // Your web app's Firebase configuration
-                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-                const firebaseConfig = {
-                  apiKey: "AIzaSyAc-j4v2Zm6r-T9h4WS2B8U7Mq7kFqbkm8",
-                  authDomain: "eco-kop.firebaseapp.com",
-                  projectId: "eco-kop",
-                  storageBucket: "eco-kop.appspot.com",
-                  messagingSenderId: "124293785917",
-                  appId: "1:124293785917:web:5cb6079d8a1c93d21bfd54",
-                  measurementId: "G-5TCV034VLJ"
-                };
-              
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-              </script>
+      <!-- Contact Us -->
 
- <h2 class="align-center">
-                    Online rezervacije
-                </h2>
+      <div class="company-contact divs">
+        <h4>Contact Us</h4>
+        <ul class="list-container">
+          <li><a href="facebook.com">Facebook</a></li>
+          <li><a href="twitter.com">Twitter</a></li>
+          <li><a href="linkedln.com">Linkedln</a></li>
+          <li><a href="instagram.com">Instagram</a></li>
+          <li><a href="Github.com">GitHub</a></li>
+        </ul>
+      </div>
+    </section>
 
-
-
-                <!-- online rezervacije sekcija -->
-
-
-            <section class="" id="online-rezervacije">
-
-
-
-
-
-
-
-               
-        <div>
-
-<form action ="" class="user-form">
-
-
-    <div class="slobodni termini">
-
-      <div class="inputBox">
-                        <h3> Slobodni termini </h3>
-                        <input type="date">
-                    </div>
-
-</div>
-                    <div class="inputBox ">
-                        <h3> Datum Prijavljivanja: </h3>
-                        <input class="prijava" type="date">
-                    </div>
-
-                     <div class="inputBox ">
-                        <h3> Datum Odjavljivanja: </h3>
-                        <input class="odjava" type="date">
-                    </div>
-
-                  
-                    <div class="inputBox ">
-                        <h3> Broj osoba: </h3>
-                        <input class="broj-osoba" type="number" placeholder="Broj osoba">
-                        
-                    </div>
-                     <button type="submit" class="btn"  > Rezervisi</button>
-                </form>
-
-        </div>
-                
-
-               
-
-
-              
-
-               
-            </section>
-
-
-
-
-            <div class="page" id="kontakt">
-                <div class="column">
-                <h2 class="align-center">
-                    Kontakt
-                </h2>
-                <div class="kontakt-podaci">
-                    <strong id="e-mail">E-mail:&nbsp</strong>
-                    <a href="mailto:prokuplje3@gmail.com">prokuplje3@gmail.com</a>
-                    <strong id="br-tel">060/56-39-012</strong>
-                    <strong id="br-tel">Broj telefona:&nbsp</strong>
-                </div>
-                </div>
-            </div>
-
-
-
-            <div class="footer">
-                <div class="column">
-                    <div class="footer-column align-left">
-                        <img alt="Loading logo.." 
-                        src="slicice\logo.png" 
-                        width="60" height="60" />
-                    </div>
-                    
-                    <div class="footer-column align-center">
-                        <a class="red-link" href="#pocetna">Pocetna</a><br>
-                        <a class="red-link" href="#slike-apartmana">Slike apartmana</a><br>
-                        <a class="red-link" href="#lokacija">Lokacija</a><br>
-                        <a class="red-link" href="#online-rezervacije">Online rezervacije</a>
-                    </div>
-                    
-                    <div class="footer-column align-right">
-                        <b>Đorđe Mitrović</b><br>
-                        <b> All rights reserved</b><br>
-                            <b> &copy;2022</b>
-                    </div>
-                </div>
-            </div>
-      <script src="script.js"></script>
-    </body>
+    <!-- end of footer -->
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
-
-
-
-
-
-<!-- 
-
-
-
-
-
-    
- -->
