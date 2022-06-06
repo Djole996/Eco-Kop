@@ -1,3 +1,6 @@
+html {
+	scroll-behavior: smooth;
+}
 body {
   font-family: "Montserrat";
   text-align: center;
@@ -309,8 +312,14 @@ p {
 }
 
 #o-nama h4 {
-  border: #fdfdfe 2px solid;
-  padding: 3%;
+  /*
+  border: #fdfdfe 2px solid; */
+  border: 1px solid #ffffff;
+	background-color: #33333370;
+	padding: 3%;
+	opacity: 1;
+	color:#FFFFFF;
+
 }
 
 /* online reservation section */
@@ -444,6 +453,7 @@ img {
     height: 420px;
   }
 }
+
 
 /* slider */
 
