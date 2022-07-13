@@ -59,7 +59,7 @@
   <body>
     <div class="nav-icons">
       <a class="navbar-brand tindog" href="">
-        <img class="logo-img" src="logo-removebg.png" />
+        <img class="logo-img" src="./css/logo-removebg.png" />
       </a>
 
       <div class="nav-favicons">
@@ -179,7 +179,11 @@
               Nakon sto sam saznao za Eco Kop,moje zimovanje je pravi uzitak sa
               njima.
             </h2>
-            <img class="testimonial-image" src="man.JPG" alt="man-profile" />
+            <img
+              class="testimonial-image"
+              src="./css/man.JPG"
+              alt="man-profile"
+            />
             <em>Pavle, Prokuplje</em>
           </div>
           <div class="carousel-item container-fluid">
@@ -187,7 +191,11 @@
               Vrhunska usluga,ljubaznost i gostoprimstvo su osobine po kojima se
               razlikuju od ostalih.
             </h2>
-            <img class="testimonial-image" src="woman.JPG" alt="lady-profile" />
+            <img
+              class="testimonial-image"
+              src="./css/woman.JPG"
+              alt="lady-profile"
+            />
             <em>Ana, Nis</em>
           </div>
         </div>
@@ -267,7 +275,7 @@
       <div class="container-fluid">
         <h2>Online Rezervacije</h2>
 
-        <form action="/" method="post" id="online">
+        <form id="online">
           <div class="row">
             <div class="col">
               <input
@@ -275,7 +283,7 @@
                 class="firstName"
                 placeholder="Ime"
                 aria-label="First name"
-                name="ime"
+                id="ime"
               />
             </div>
             <div class="col">
@@ -284,7 +292,7 @@
                 class="lastName"
                 placeholder="Prezime"
                 aria-label="Last name"
-                name="prezime"
+                id="prezime"
               />
             </div>
             <div class="col">
@@ -292,7 +300,7 @@
                 type="email"
                 class="email"
                 placeholder="Email"
-                name="email"
+                id="email"
               />
             </div>
           </div>
@@ -300,12 +308,12 @@
           <div class="inputBox dates">
             <div class="dates-item">
               <h5>Datum Prijave</h5>
-              <input class="prijava" type="date" name="prijava" />
+              <input class="prijava" type="date" id="prijava" />
             </div>
 
             <div class="dates-item">
               <h5>Datum Odjave</h5>
-              <input class="odjava" type="date" name="odjava" />
+              <input class="odjava" type="date" id="odjava" />
             </div>
 
             <div class="dates-item">
@@ -314,7 +322,7 @@
                 class="broj-osoba"
                 type="number"
                 placeholder="1"
-                name="brojOsoba"
+                id="brojOsoba"
               />
             </div>
             <div class="dates-item">
@@ -323,7 +331,7 @@
                 class="broj-telefona"
                 type="text"
                 placeholder=""
-                name="brojTelefona"
+                id="brojTelefona"
               />
             </div>
           </div>
@@ -336,23 +344,59 @@
     <!-- Galerija -->
     <h2 class="galery-heading">Galerija</h2>
     <section class="white-section" id="gallery1">
-      <img src="slike-apartmana/S1.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S1.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S2.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S2.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S3.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S3.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S4.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S4.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S5.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S5.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S6.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S6.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S7.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S7.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S8.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S8.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
 
-      <img src="slike-apartmana/S9.JPG" class="gallery-item" alt="gallery" />
+      <img
+        src="./css/slike-apartmana/S9.JPG"
+        class="gallery-item"
+        alt="gallery"
+      />
     </section>
     <!-- galery -->
 
@@ -405,7 +449,7 @@
       <div class="footer-colum footer-item">
         <img
           alt="Loading logo.."
-          src="logo-removebg.png"
+          src="./css/logo-removebg.png"
           width="60"
           height="60"
         />
@@ -454,6 +498,10 @@
     </div>
     <!-- slider -->
 
-    <script src="app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+
+    <script type="module" src="apps.js"></script>
   </body>
 </html>
