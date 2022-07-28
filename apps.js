@@ -76,14 +76,12 @@ form.addEventListener("submit", (event) => {
         return item.lastDay;
       });
 
-      lastDays.map((item) => {
-        if (item === lastDay) {
-          modal.classList.add("open-modal");
-          modalText.innerHTML = "datum je rezervisan 2";
-        }
+      const filteredLastDays = lastDays.filter((item) => {
+        return item === lastDay;
       });
+      console.log(filteredLastDays);
 
-      if (filteredDays.length > 0) {
+      if (filteredDays.length > 0 || filteredLastDays.length > 0) {
         modalText.innerHTML = "Datum je rezervisan.";
         modal.classList.add("open-modal");
       } else if (
