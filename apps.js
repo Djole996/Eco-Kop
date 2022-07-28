@@ -60,8 +60,33 @@ form.addEventListener("submit", (event) => {
       });
 
       /* krenuti odavde da se items kroz filter izbace i rezultat provuci kroy if else statement */
+      firstDays = items.map((item) => {
+        return item.firstDay;
+      });
 
-      if (
+      const filteredDays = firstDays.filter((item) => {
+        return item === firstDay;
+      });
+      console.log(filteredDays);
+      console.log(firstDays);
+
+      /* FOR LAST DAYS */
+
+      lastDays = items.map((item) => {
+        return item.lastDay;
+      });
+
+      lastDays.map((item) => {
+        if (item === lastDay) {
+          modal.classList.add("open-modal");
+          modalText.innerHTML = "datum je rezervisan 2";
+        }
+      });
+
+      if (filteredDays.length > 0) {
+        modalText.innerHTML = "Datum je rezervisan.";
+        modal.classList.add("open-modal");
+      } else if (
         firstName &&
         lastName &&
         email &&
@@ -70,30 +95,7 @@ form.addEventListener("submit", (event) => {
         persons &&
         phone
       ) {
-        firstDays = items.map((item) => {
-          return item.firstDay;
-        });
-
-        firstDays.filter((item) => {
-          return item === firstDay;
-        });
-
-        console.log(firstDays);
-
         //for last days
-
-        lastDays = items.map((item) => {
-          return item.lastDay;
-        });
-
-        lastDays.map((item) => {
-          if (item === lastDay) {
-            modal.classList.add("open-modal");
-            modalText.innerHTML = "datum je rezervisan";
-
-            return;
-          }
-        });
 
         db.collection("users")
           .add({
@@ -114,9 +116,6 @@ form.addEventListener("submit", (event) => {
 
         modal.classList.add("open-modal");
         modalText.innerHTML = "Vasa rezervacija je uspjesno poslana.";
-      } else if (first) {
-        modalText.innerHTML = "Datum je rezervisan.";
-        modal.classList.add("open-modal");
       } else {
         modal.classList.add("open-modal");
       }
