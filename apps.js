@@ -40,9 +40,17 @@ form.addEventListener("submit", (event) => {
   const lastDay = document.getElementById("odjava").value;
   const persons = document.getElementById("brojOsoba").value;
   const phone = document.getElementById("brojTelefona").value;
+  const modal = document.querySelector(".modal-overlay");
+
+  const modalText = document.querySelector(".modal-text");
+  const closeBtn = document.querySelector(".close-btn");
+  closeBtn.addEventListener("click", function () {
+    modal.classList.remove("open-modal");
+  });
 
   let firstDays = [];
   let lastDays = [];
+  var first = [null];
   //read data
   db.collection("users")
     .get()
@@ -51,35 +59,66 @@ form.addEventListener("submit", (event) => {
         return { ...item.data(), id: item.id };
       });
 
-      //for first dates
+      /* krenuti odavde da se items kroz filter izbace i rezultat provuci kroy if else statement */
       firstDays = items.map((item) => {
         return item.firstDay;
       });
+
+      const filteredDays = firstDays.filter((item) => {
+        return item === firstDay;
+      });
+      console.log(filteredDays);
       console.log(firstDays);
 
-      firstDays.map((item) => {
-        if (item === firstDay) {
-          console.log(item);
-          alert("datum je rezervisan,molimo izaberite drugi datum");
-          return;
-        }
+      /* FOR LAST DAYS */
+
+      lastDays = items.map((item) => {
+        return item.lastDay;
       });
-      db.collection("users")
-        .add({
-          name: firstName,
-          lastName: lastName,
-          email: email,
-          firstDay: firstDay,
-          lastDay: lastDay,
-          persons: persons,
-          phone: phone,
-        })
-        .then((docRef) => {
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
+
+      const filteredLastDays = lastDays.filter((item) => {
+        return item === lastDay;
+      });
+      console.log(filteredLastDays);
+
+      if (filteredDays.length > 0 || filteredLastDays.length > 0) {
+        modalText.innerHTML = "Datum je rezervisan.";
+        modal.classList.add("open-modal");
+      } else if (
+        firstName &&
+        lastName &&
+        email &&
+        firstDay &&
+        lastDay &&
+        persons &&
+        phone
+      ) {
+        //for last days
+
+        db.collection("users")
+          .add({
+            name: firstName,
+            lastName: lastName,
+            email: email,
+            firstDay: firstDay,
+            lastDay: lastDay,
+            persons: persons,
+            phone: phone,
+          })
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+
+        modal.classList.add("open-modal");
+        modalText.innerHTML = "Vasa rezervacija je uspjesno poslana.";
+      } else {
+        modal.classList.add("open-modal");
+      }
+
+      //for first dates
     });
 
   //create date
