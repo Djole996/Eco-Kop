@@ -119,8 +119,6 @@ form.addEventListener("submit", (event) => {
 
   console.log(reservationDays);
 
-  const freeDays = [];
-
   /* datum prijave i odjave da se ne preklapaju da blokiraju jedna drugog */
   /*  dodati boje da vidimo ka iougleda*/
 
@@ -143,16 +141,19 @@ form.addEventListener("submit", (event) => {
 
       console.log(merged);
 
-      /*  */
-
       const filteredDays = merged.includes(...reservationDays);
 
-      console.log(filteredDays);
-      /* procui reservation days i usporediti sa unjetim danima jkeli s epoklapaju */
+      const a = [1, 2, 3];
+      const b = [1, 2, 3, 4, 5];
+
+      const freeDays = allDays.filter((e) => !merged.includes(e));
+      console.log(freeDays);
+
+      console.log("free days is : " + freeDays);
 
       if (filteredDays) {
         modalText.innerHTML =
-          "Datum je rezervisan.  Slobodni su sledeci datumi 22m,,2,2l232323 a,s,ajsha82897289";
+          "Datum je rezervisan.  Slobodni su sledeci datumi:" + freeDays;
         modal.classList.add("open-modal");
       } else if (
         firstName &&
@@ -163,8 +164,6 @@ form.addEventListener("submit", (event) => {
         persons &&
         phone
       ) {
-        //for last days
-
         db.collection("users")
           .add({
             name: firstName,
@@ -188,21 +187,5 @@ form.addEventListener("submit", (event) => {
       } else {
         modal.classList.add("open-modal");
       }
-
-      //for first dates
     });
-
-  //create date
 });
-
-//if (firstName && lastName && email && firstDay && lastDay && persons && phone) {
-//firebase implementation
-/* const data = {
-  name: firstName,
-  lastName: lastName,
-  email: email,
-  firstDay: firstDay,
-  lastDay: lastDay,
-  persons: persons,
-  phone: phone,
-}; */
