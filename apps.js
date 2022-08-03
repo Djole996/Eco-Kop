@@ -44,6 +44,7 @@ form.addEventListener("submit", (event) => {
 
   const modalText = document.querySelector(".modal-text");
   const closeBtn = document.querySelector(".close-btn");
+
   closeBtn.addEventListener("click", function () {
     modal.classList.remove("open-modal");
   });
@@ -115,7 +116,7 @@ form.addEventListener("submit", (event) => {
 
   let indexLast = allDays.indexOf(lastDay);
 
-  let reservationDays = allDays.slice(indexFirst, indexLast);
+  let reservationDays = allDays.slice(indexFirst, indexLast + 1);
 
   console.log(reservationDays);
 
@@ -147,14 +148,15 @@ form.addEventListener("submit", (event) => {
       const b = [1, 2, 3, 4, 5];
 
       const freeDays = allDays.filter((e) => !merged.includes(e));
-      console.log(freeDays);
+      const finalFreeDays = freeDays.join("        ,       ");
 
-      console.log("free days is : " + freeDays);
+      console.log("free days is : " + finalFreeDays);
 
       if (filteredDays) {
         modalText.innerHTML =
-          "Datum je rezervisan.  Slobodni su sledeci datumi:" + freeDays;
+          "Datum je rezervisan.  Slobodni su sledeci datumi:" + finalFreeDays;
         modal.classList.add("open-modal");
+        modalText.style.color = "pink";
       } else if (
         firstName &&
         lastName &&
@@ -183,9 +185,11 @@ form.addEventListener("submit", (event) => {
           });
 
         modal.classList.add("open-modal");
+        modalText.style.color = "lightGreen";
         modalText.innerHTML = "Vasa rezervacija je uspjesno poslana.";
       } else {
         modal.classList.add("open-modal");
+        modalText.style.color = "pink";
       }
     });
 });
