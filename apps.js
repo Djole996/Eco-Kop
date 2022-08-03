@@ -47,10 +47,83 @@ form.addEventListener("submit", (event) => {
   closeBtn.addEventListener("click", function () {
     modal.classList.remove("open-modal");
   });
+  const allDays = [
+    "2022-08-01",
+    "2022-08-02",
+    "2022-08-03",
+    "2022-08-04",
+    "2022-08-05",
+    "2022-08-06",
+    "2022-08-07",
+    "2022-08-08",
+    "2022-08-09",
+    "2022-08-10",
+    "2022-08-11",
+    "2022-08-12",
+    "2022-08-13",
+    "2022-08-14",
+    "2022-08-15",
+    "2022-08-16",
+    "2022-08-17",
+    "2022-08-18",
+    "2022-08-19",
+    "2022-08-20",
+    "2022-08-21",
+    "2022-08-22",
+    "2022-08-23",
+    "2022-08-24",
+    "2022-08-25",
+    "2022-08-26",
+    "2022-08-27",
+    "2022-08-28",
+    "2022-08-29",
+    "2022-08-30",
+    "2022-08-31",
+    "2022-09-01",
+    "2022-09-02",
+    "2022-09-03",
+    "2022-09-04",
+    "2022-09-05",
+    "2022-09-06",
+    "2022-09-07",
+    "2022-09-08",
+    "2022-09-09",
+    "2022-09-10",
+    "2022-09-11",
+    "2022-09-12",
+    "2022-09-13",
+    "2022-09-14",
+    "2022-09-15",
+    "2022-09-16",
+    "2022-09-17",
+    "2022-09-18",
+    "2022-09-19",
+    "2022-09-20",
+    "2022-09-21",
+    "2022-09-22",
+    "2022-09-23",
+    "2022-09-24",
+    "2022-09-25",
+    "2022-09-26",
+    "2022-09-27",
+    "2022-09-28",
+    "2022-09-29",
+    "2022-09-30",
+  ];
 
-  let firstDays = [];
-  let lastDays = [];
-  var first = [null];
+  let indexFirst = allDays.indexOf(firstDay);
+
+  let indexLast = allDays.indexOf(lastDay);
+
+  let reservationDays = allDays.slice(indexFirst, indexLast);
+
+  console.log(reservationDays);
+
+  const freeDays = [];
+
+  /* datum prijave i odjave da se ne preklapaju da blokiraju jedna drugog */
+  /*  dodati boje da vidimo ka iougleda*/
+
   //read data
   db.collection("users")
     .get()
@@ -59,30 +132,27 @@ form.addEventListener("submit", (event) => {
         return { ...item.data(), id: item.id };
       });
 
-      /* krenuti odavde da se items kroz filter izbace i rezultat provuci kroy if else statement */
-      firstDays = items.map((item) => {
-        return item.firstDay;
+      const takenDays = items.map((item) => {
+        const day = item.days.map((day) => {
+          return day;
+        });
+        return day;
       });
 
-      const filteredDays = firstDays.filter((item) => {
-        return item === firstDay;
-      });
+      var merged = [].concat.apply([], takenDays);
+
+      console.log(merged);
+
+      /*  */
+
+      const filteredDays = merged.includes(...reservationDays);
+
       console.log(filteredDays);
-      console.log(firstDays);
+      /* procui reservation days i usporediti sa unjetim danima jkeli s epoklapaju */
 
-      /* FOR LAST DAYS */
-
-      lastDays = items.map((item) => {
-        return item.lastDay;
-      });
-
-      const filteredLastDays = lastDays.filter((item) => {
-        return item === lastDay;
-      });
-      console.log(filteredLastDays);
-
-      if (filteredDays.length > 0 || filteredLastDays.length > 0) {
-        modalText.innerHTML = "Datum je rezervisan.";
+      if (filteredDays) {
+        modalText.innerHTML =
+          "Datum je rezervisan.  Slobodni su sledeci datumi 22m,,2,2l232323 a,s,ajsha82897289";
         modal.classList.add("open-modal");
       } else if (
         firstName &&
@@ -104,6 +174,7 @@ form.addEventListener("submit", (event) => {
             lastDay: lastDay,
             persons: persons,
             phone: phone,
+            days: reservationDays,
           })
           .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
