@@ -121,7 +121,8 @@ form.addEventListener("submit", (event) => {
   console.log(reservationDays);
 
   /* datum prijave i odjave da se ne preklapaju da blokiraju jedna drugog */
-  /*  dodati boje da vidimo ka iougleda*/
+
+  /* kraj datuma */
 
   //read data
   db.collection("users")
@@ -148,15 +149,14 @@ form.addEventListener("submit", (event) => {
       const b = [1, 2, 3, 4, 5];
 
       const freeDays = allDays.filter((e) => !merged.includes(e));
-      const finalFreeDays = freeDays.join("        ,       ");
+      const finalFreeDays = freeDays.join(" // ");
 
       console.log("free days is : " + finalFreeDays);
 
       if (filteredDays) {
-        modalText.innerHTML =
-          "Datum je rezervisan.  Slobodni su sledeci datumi:" + finalFreeDays;
+        modalText.innerHTML = `<h2> Datum je rezervisan!</h2> <p> Slobodni su sledeci datumi: ${finalFreeDays} </p>`;
+
         modal.classList.add("open-modal");
-        modalText.style.color = "pink";
       } else if (
         firstName &&
         lastName &&
