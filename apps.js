@@ -45,13 +45,6 @@ form.addEventListener("submit", (event) => {
   const phone = document.getElementById("brojTelefona").value;
   const modal = document.querySelector(".modal-overlay");
 
-  if (firstDay > lastDay) {
-    let text = "Molimo izaberite ispravan datum";
-
-    alert(text);
-    return;
-  }
-
   console.log(firstDay);
   console.log(lastDay);
 
@@ -166,7 +159,14 @@ form.addEventListener("submit", (event) => {
 
       console.log("free days is : " + finalFreeDays);
 
-      if (filteredDays) {
+      if (firstDay > lastDay) {
+        modal.classList.add("open-modal");
+        modalText.style.color = "lightPink";
+        modalText.innerHTML =
+          "Datum odjave ne moze biti ispred datuma prijave!";
+
+        return;
+      } else if (filteredDays) {
         modalText.innerHTML = `<h2> Datum je rezervisan!</h2> <p> Slobodni su sledeci datumi: ${finalFreeDays} </p>`;
 
         modal.classList.add("open-modal");
