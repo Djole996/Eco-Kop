@@ -31,6 +31,9 @@ const db = firebaseApp.firestore();
 
 const form = document.getElementById("online");
 
+const firstDay1 = document.getElementById("prijava").value;
+const lastDay1 = document.getElementById("odjava").value;
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const firstName = document.getElementById("ime").value;
@@ -41,6 +44,16 @@ form.addEventListener("submit", (event) => {
   const persons = document.getElementById("brojOsoba").value;
   const phone = document.getElementById("brojTelefona").value;
   const modal = document.querySelector(".modal-overlay");
+
+  if (firstDay > lastDay) {
+    let text = "Molimo izaberite ispravan datum";
+
+    alert(text);
+    return;
+  }
+
+  console.log(firstDay);
+  console.log(lastDay);
 
   const modalText = document.querySelector(".modal-text");
   const closeBtn = document.querySelector(".close-btn");
