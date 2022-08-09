@@ -126,10 +126,6 @@ form.addEventListener("submit", (event) => {
 
   console.log(reservationDays);
 
-  /* datum prijave i odjave da se ne preklapaju da blokiraju jedna drugog */
-
-  /* kraj datuma */
-
   //read data
   db.collection("users")
     .get()
