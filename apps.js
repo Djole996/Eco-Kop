@@ -195,7 +195,7 @@ form.addEventListener("submit", (event) => {
 
         modal.classList.add("open-modal");
         modalText.style.color = "lightGreen";
-        modalText.innerHTML = "Vasa rezervacija je uspesno poslata.";
+        modalText.innerHTML = "Vasa rezervacija je uspešno primljena. Uskoro će Vam se javiti neko od članova našeg tima. ";
       } else {
         modal.classList.add("open-modal");
         modalText.style.color = "pink";
