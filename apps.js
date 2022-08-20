@@ -10,11 +10,13 @@ document.addEventListener("click", function (e) {
   }
 });
 
-/* slider */
-//import { appFirebase, database } from "./firebaseConfig.js";
-//import { collection, addDoc } from "/firebase/firestore";
+const closeImg = document.querySelector(".close-img");
 
-//const collectionRef = collection(database, "users");
+closeImg.addEventListener("click", () => {
+  document.getElementById("gallery-modal").style.display = "none";
+});
+
+/* fire base and reservation application */
 
 const firebaseApp = firebase.initializeApp({
   //Your own Firebase Credentials..
@@ -44,9 +46,6 @@ form.addEventListener("submit", (event) => {
   const persons = document.getElementById("brojOsoba").value;
   const phone = document.getElementById("brojTelefona").value;
   const modal = document.querySelector(".modal-overlay");
-
-  console.log(firstDay);
-  console.log(lastDay);
 
   const modalText = document.querySelector(".modal-text");
   const closeBtn = document.querySelector(".close-btn");
@@ -124,8 +123,6 @@ form.addEventListener("submit", (event) => {
 
   let reservationDays = allDays.slice(indexFirst, indexLast + 1);
 
-  console.log(reservationDays);
-
   //read data
   db.collection("users")
     .get()
@@ -143,8 +140,6 @@ form.addEventListener("submit", (event) => {
 
       var merged = [].concat.apply([], takenDays);
 
-      console.log(merged);
-
       const filteredDays = merged.includes(...reservationDays);
 
       const a = [1, 2, 3];
@@ -153,9 +148,25 @@ form.addEventListener("submit", (event) => {
       const freeDays = allDays.filter((e) => !merged.includes(e));
       const finalFreeDays = freeDays.join(" // ");
 
-      console.log("free days is : " + finalFreeDays);
+      let today = new Date();
 
-      if (firstDay > lastDay) {
+      let currentDate =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate();
+
+      console.log(currentDate);
+
+      if (currentDate > firstDay) {
+        modal.classList.add("open-modal");
+        modalText.style.color = "lightPink";
+        modalText.innerHTML =
+          "Datum prijave ne moze biti ispred trenutnog datuma!";
+
+        return;
+      } else if (firstDay > lastDay) {
         modal.classList.add("open-modal");
         modalText.style.color = "lightPink";
         modalText.innerHTML =
@@ -195,7 +206,8 @@ form.addEventListener("submit", (event) => {
 
         modal.classList.add("open-modal");
         modalText.style.color = "lightGreen";
-        modalText.innerHTML = "Vasa rezervacija je uspešno primljena. Uskoro će Vam se javiti neko od članova našeg tima. ";
+        modalText.innerHTML =
+          "Vasa rezervacija je uspešno primljena. Uskoro će Vam se javiti neko od članova našeg tima. ";
       } else {
         modal.classList.add("open-modal");
         modalText.style.color = "pink";
