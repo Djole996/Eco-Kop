@@ -514,7 +514,7 @@ img {
 }
 
 .modal img {
-  width: 50%;
+  width: 100%;
 }
 
 .closeBtn {
@@ -555,6 +555,7 @@ img {
   margin: auto;
   padding: 0;
   width: 90%;
+
   max-width: 1200px;
 }
 
