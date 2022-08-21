@@ -62,6 +62,17 @@ const form = document.getElementById("online");
 const firstDay1 = document.getElementById("prijava").value;
 const lastDay1 = document.getElementById("odjava").value;
 
+const date1 = new Date();
+const currentDate1 = date1.toISOString().split("T")[0];
+
+const prijava = document.getElementById("prijava");
+
+prijava.setAttribute("min", currentDate1);
+
+const odjava = document.getElementById("odjava");
+
+odjava.setAttribute("min", currentDate1);
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const firstName = document.getElementById("ime").value;
@@ -168,28 +179,18 @@ form.addEventListener("submit", (event) => {
 
       const filteredDays = merged.includes(...reservationDays);
 
-      const a = [1, 2, 3];
-      const b = [1, 2, 3, 4, 5];
+      let freeDays = allDays.filter((e) => !merged.includes(e));
 
-      const freeDays = allDays.filter((e) => !merged.includes(e));
-      const finalFreeDays = freeDays.join(" // ");
+      let newFree = freeDays.filter((item) => {
+        return item >= currentDate1;
+      });
 
-      let today = new Date();
+      const finalFreeDays = newFree.join(" // ");
 
       const date = new Date();
       const currentDate = date.toISOString().split("T")[0];
 
-      console.log(currentDate);
-      console.log(firstDay);
-
-      if (currentDate > firstDay) {
-        modal.classList.add("open-modal");
-        modalText.style.color = "lightPink";
-        modalText.innerHTML =
-          "Datum prijave ne moze biti ispred trenutnog datuma!";
-
-        return;
-      } else if (firstDay > lastDay) {
+      if (firstDay > lastDay) {
         modal.classList.add("open-modal");
         modalText.style.color = "lightPink";
         modalText.innerHTML =
@@ -209,28 +210,37 @@ form.addEventListener("submit", (event) => {
         persons &&
         phone
       ) {
-        db.collection("users")
-          .add({
-            name: firstName,
-            lastName: lastName,
-            email: email,
-            firstDay: firstDay,
-            lastDay: lastDay,
-            persons: persons,
-            phone: phone,
-            days: reservationDays,
-          })
-          .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch((error) => {
-            console.error("Error adding document: ", error);
-          });
+        if (currentDate > firstDay) {
+          modal.classList.add("open-modal");
+          modalText.style.color = "lightPink";
+          modalText.innerHTML =
+            "Datum prijave ne moze biti ispred trenutnog datuma!";
 
-        modal.classList.add("open-modal");
-        modalText.style.color = "lightGreen";
-        modalText.innerHTML =
-          "Vasa rezervacija je uspešno primljena. Uskoro će Vam se javiti neko od članova našeg tima. ";
+          return;
+        } else {
+          db.collection("users")
+            .add({
+              name: firstName,
+              lastName: lastName,
+              email: email,
+              firstDay: firstDay,
+              lastDay: lastDay,
+              persons: persons,
+              phone: phone,
+              days: reservationDays,
+            })
+            .then((docRef) => {
+              console.log("Document written with ID: ", docRef.id);
+            })
+            .catch((error) => {
+              console.error("Error adding document: ", error);
+            });
+
+          modal.classList.add("open-modal");
+          modalText.style.color = "lightGreen";
+          modalText.innerHTML =
+            "Vasa rezervacija je uspešno primljena. Uskoro će Vam se javiti neko od članova našeg tima. ";
+        }
       } else {
         modal.classList.add("open-modal");
         modalText.style.color = "pink";
