@@ -178,8 +178,7 @@ form.addEventListener("submit", (event) => {
       var merged = [].concat.apply([], takenDays);
 
       const filteredDays = merged.includes(...reservationDays);
-
-      let freeDays = allDays.filter((e) => !merged.includes(e));
+      const freeDays = allDays.filter((e) => !merged.includes(e));
 
       let newFree = freeDays.filter((item) => {
         return item >= currentDate1;
@@ -194,11 +193,11 @@ form.addEventListener("submit", (event) => {
         modal.classList.add("open-modal");
         modalText.style.color = "lightPink";
         modalText.innerHTML =
-          "Datum odjave ne moze biti ispred datuma prijave!";
+          "Datum odjave ne može biti ispred datuma prijave!";
 
         return;
       } else if (filteredDays) {
-        modalText.innerHTML = `<h2> Datum je rezervisan!</h2> <p> Slobodni su sledeci datumi: ${finalFreeDays} </p>`;
+        modalText.innerHTML = `<h2> Nažalost, termin koji ste odabrali je već rezervisan.</h2> <p> U narednom periodu slobodni su sledeći datumi: ${finalFreeDays} </p>`;
 
         modal.classList.add("open-modal");
       } else if (
@@ -214,7 +213,7 @@ form.addEventListener("submit", (event) => {
           modal.classList.add("open-modal");
           modalText.style.color = "lightPink";
           modalText.innerHTML =
-            "Datum prijave ne moze biti ispred trenutnog datuma!";
+            "Datum prijave ne može biti ispred trenutnog datuma!";
 
           return;
         } else {
@@ -239,7 +238,7 @@ form.addEventListener("submit", (event) => {
           modal.classList.add("open-modal");
           modalText.style.color = "lightGreen";
           modalText.innerHTML =
-            "Vasa rezervacija je uspešno primljena. Uskoro će Vam se javiti neko od članova našeg tima. ";
+            "Vasa rezervacija je uspešno primljena. Uskoro će Vas kontaktirati neko od članova našeg tima. ";
         }
       } else {
         modal.classList.add("open-modal");
