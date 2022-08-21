@@ -515,7 +515,6 @@ img {
 
 .modal img {
   width: 50%;
-  object-fit: cover;
 }
 
 .closeBtn {
