@@ -360,7 +360,7 @@
 
     <!-- Galerija -->
 
-    <h2>Galerija</h2>
+    <h2 class="gallery-heading">Galerija</h2>
 
     <div class="gallery">
       <img
@@ -370,46 +370,46 @@
       />
       <img
         src="./css/slike-apartmana/S2.JPG"
-        onclick="openModal();currentSlide(1)"
+        onclick="openModal();currentSlide(2)"
         class="hover-shadow gallery__item"
       />
       <img
         src="./css/slike-apartmana/S3.JPG"
-        onclick="openModal();currentSlide(1)"
+        onclick="openModal();currentSlide(3)"
         class="hover-shadow gallery__item"
       />
       <img
         src="./css/slike-apartmana/S4.JPG"
-        onclick="openModal();currentSlide(1)"
+        onclick="openModal();currentSlide(4)"
         class="hover-shadow gallery__item"
       />
       <img
         src="./css/slike-apartmana/S5.JPG"
-        onclick="openModal();currentSlide(1)"
+        onclick="openModal();currentSlide(5)"
         class="hover-shadow gallery__item"
       />
 
       <img
         src="./css/slike-apartmana/S6.JPG"
-        onclick="openModal();currentSlide(1)"
+        onclick="openModal();currentSlide(6)"
         class="hover-shadow gallery__item"
       />
 
       <img
         src="./css/slike-apartmana/S7.JPG"
-        onclick="openModal();currentSlide(2)"
+        onclick="openModal();currentSlide(7)"
         class="hover-shadow gallery__item"
       />
 
       <img
         src="./css/slike-apartmana/S8.JPG"
-        onclick="openModal();currentSlide(3)"
+        onclick="openModal();currentSlide(8)"
         class="hover-shadow gallery__item"
       />
 
       <img
         src="./css/slike-apartmana/S9.JPG"
-        onclick="openModal();currentSlide(4)"
+        onclick="openModal();currentSlide(9)"
         class="hover-shadow gallery__item"
       />
     </div>
@@ -496,43 +496,43 @@
       <span class="close cursor" onclick="closeModal()">&times;</span>
       <div class="modal-content">
         <div class="mySlides">
-          <div class="numbertext">1 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S1.JPG" style="width: 100%" />
         </div>
         <div class="mySlides">
-          <div class="numbertext">2 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S2.JPG" style="width: 100%" />
         </div>
         <div class="mySlides">
-          <div class="numbertext">3 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S3.JPG" style="width: 100%" />
         </div>
         <div class="mySlides">
-          <div class="numbertext">4 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S4.JPG" style="width: 100%" />
         </div>
         <div class="mySlides">
-          <div class="numbertext">5 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S5.JPG" style="width: 100%" />
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">6 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S6.JPG" style="width: 100%" />
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">7 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S7.JPG" style="width: 100%" />
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">8 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S8.JPG" style="width: 100%" />
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">9 / 9</div>
+          <div class="numbertext"></div>
           <img src="./css/slike-apartmana/S9.JPG" style="width: 100%" />
         </div>
 
@@ -541,11 +541,17 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
         <!-- Caption text -->
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
       </div>
     </div>
+
+    <!-- reservation modal -->
+    <div class="modal-overlay">
+      <div class="modal-container">
+        <h4 class="modal-text">Molimo unesite trazene podatke!</h4>
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <!--  -->
 
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
@@ -582,7 +588,7 @@
         var i;
         var slides = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
+
         if (n > slides.length) {
           slideIndex = 1;
         }
@@ -596,8 +602,6 @@
           dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
       }
     </script>
   </body>

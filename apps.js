@@ -40,8 +40,6 @@ function showSlides(n) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex - 1].style.display = "block";
-
-  captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
 /* fire base and reservation application */
@@ -186,6 +184,7 @@ form.addEventListener("submit", (event) => {
         today.getDate();
 
       console.log(currentDate);
+      console.log(firstDay);
 
       if (currentDate > firstDay) {
         modal.classList.add("open-modal");
