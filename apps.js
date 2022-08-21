@@ -176,12 +176,8 @@ form.addEventListener("submit", (event) => {
 
       let today = new Date();
 
-      let currentDate =
-        today.getFullYear() +
-        "-" +
-        (today.getMonth() + 1) +
-        "-" +
-        today.getDate();
+      const date = new Date();
+      const currentDate = date.toISOString().split("T")[0];
 
       console.log(currentDate);
       console.log(firstDay);
