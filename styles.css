@@ -660,7 +660,7 @@ img.hover-shadow {
 .dayContainer {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196f3;
+  background-color: #ffffff;
   padding: 10px;
   gap: 5px;
 }
