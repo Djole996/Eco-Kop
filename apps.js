@@ -186,6 +186,12 @@ form.addEventListener("submit", (event) => {
 
       const finalFreeDays = newFree.join(" // ");
 
+      const final = newFree
+        .map((day) => {
+          return `<div><p class='day'>${day}</p></div>`;
+        })
+        .join("");
+
       const date = new Date();
       const currentDate = date.toISOString().split("T")[0];
 
@@ -197,7 +203,7 @@ form.addEventListener("submit", (event) => {
 
         return;
       } else if (filteredDays) {
-        modalText.innerHTML = `<h2> Nažalost, termin koji ste odabrali je već rezervisan.</h2> <p> U narednom periodu slobodni su sledeći datumi: ${finalFreeDays} </p>`;
+        modalText.innerHTML = `<h2 class='modal-title'> Nažalost, termin koji ste odabrali je već rezervisan.</h2> <p class='title-p'> U narednom periodu slobodni su sledeći datumi:</p>  <div class='dayContainer'>${final}</div> `;
 
         modal.classList.add("open-modal");
       } else if (
