@@ -349,6 +349,17 @@ p {
   border-radius: 7px;
   padding: 1.3% 4.4%;
 }
+@media (max-width: 550px) {
+  .prijava,
+  .odjava,
+  .broj-osoba,
+  .broj-telefona,
+  .firstName,
+  .lastName,
+  .email {
+    scale: 1.2;
+  }
+}
 
 .btn3 {
   margin-top: 3%;
@@ -663,6 +674,30 @@ img.hover-shadow {
   background-color: #ffffff;
   padding: 10px;
   gap: 5px;
+}
+
+@media (max-width: 950px) {
+  .dayContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .day {
+    font-size: 20px;
+  }
+  .modal-title {
+    font-size: 20px;
+  }
+  .title-p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .dayContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .day {
+    font-size: 20px;
+  }
 }
 
 .modal-title {
